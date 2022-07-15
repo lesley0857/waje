@@ -148,7 +148,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 3
 }
 
-STATICFILES_DIR = 
+
 django_heroku.settings(locals())
 
 CORS_ORIGIN_ALLOW_ALL = True
