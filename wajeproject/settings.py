@@ -10,9 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import imp
 import os
 
 from pathlib import Path
+import django_heroku
+import dj_database_url
+from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -137,6 +142,7 @@ REST_FRAMEWORK = {
 }
 
 
+django_heroku.settings(locals())
 
 CORS_ORIGIN_ALLOW_ALL = True
 FILE_UPLOAD_PERMISSIONS = 0o640
