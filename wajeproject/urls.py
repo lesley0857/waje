@@ -22,12 +22,12 @@ from wajeapp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('books/', list_book, name='list_book'),
-    # path('book/<int:id>/', book_detail, name='book_detail'),
+    path('books/', Book_list_View.as_view(), name='list_book'),
+    path('book/<int:id>/', Book_listid_View.as_view(), name='book_detail'),
     path('authors/', Author_list_View.as_view(), name='list_authors'),
-    # path('author/<int:id>/', list_author, name='list_author'),
-    # path('author_create/', author_create, name='author_create'),
-    # path('book_create/', book_create, name='book_create'),
+    path('author/<int:id>/', Author_listid_View.as_view(), name='list_author'),
+    path('author_create', Author_post_View.as_view(), name='author_create'),
+    path('book_create', Book_post_View.as_view(), name='book_create'),
     # path('author_put', author_put, name='author_put'),
     # path('books_put/', books_put, name='books_put'),
 ]
